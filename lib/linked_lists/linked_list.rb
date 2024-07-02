@@ -7,7 +7,19 @@ class LinkedList
         @head = value
     end
 
-    def append(value); end
+    def append(value)
+        if @head.nil?
+            @head = value
+        else
+            temp = @head
+
+            while !temp.next_node.nil?
+                temp = temp.next_node
+            end
+
+        temp.next_node = value
+        end
+    end
 
     def prepend(value)
         # prepend and reassign head
@@ -66,7 +78,5 @@ class LinkedList
 
             print "nil"
         end
-        # represent your LL objects as strings
-        # (value) -> (value) -> (value) -> nil
     end
 end
