@@ -4,23 +4,32 @@ class LinkedList
     end
 
     def add_first(value)
-        @head = node
+        @head = value
     end
 
-    def append(value)
-        # traverse and append
-    end
+    def append(value); end
 
     def prepend(value)
         # prepend and reassign head
     end
 
     def size
-        # create a counter and traverse
+        counter = 0
+        return counter if @head.nil?
+
+        temp = @head
+        counter += 1
+
+        while !temp.next_node.nil?
+            counter += 1
+            temp = temp.next_node
+        end
+
+        counter
     end
 
     def head
-        puts "#{@ħead}"
+        puts "The ist head is -> (#{@ħead.value})"
     end
 
     def tail
@@ -44,6 +53,19 @@ class LinkedList
     end
 
     def to_s
+        if @head.nil?
+            puts "Linked list is empty."
+        else
+            temp = @head
+
+            print "(#{temp.value}) -> "
+
+            while !temp.next_node.nil?
+                print "(#{temp.value}) -> "
+            end
+
+            print "nil"
+        end
         # represent your LL objects as strings
         # (value) -> (value) -> (value) -> nil
     end
