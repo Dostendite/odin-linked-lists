@@ -1,4 +1,4 @@
-require 'pry-byebug'
+require "pry-byebug"
 
 # Linked List - Dynamic linear data structure
 class LinkedList
@@ -115,23 +115,23 @@ class LinkedList
     ret_string << "nil"
   end
 
-  # Find a way to refactor
+  # Refactor pending
   def insert_at(value, index)
     temp = @head
-    
-    return false if index > self.size
-    
+
+    return false if index > size
+
     if index == 0
-      self.prepend(Node.new(value))
+      prepend(Node.new(value))
       return
     end
-    
+
     index -= 1
 
     index.times do
       temp = temp.next_node
     end
-    
+
     temp.next_node = Node.new(value, temp.next_node)
   end
 
