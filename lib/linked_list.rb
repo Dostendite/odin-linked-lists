@@ -1,3 +1,5 @@
+require 'pry-byebug'
+
 # Linked List - Dynamic linear data structure
 class LinkedList
   def initialize
@@ -112,4 +114,26 @@ class LinkedList
     end
     ret_string << "nil"
   end
+
+  def insert_at(value, index)
+    temp = @head
+    
+    return false if (index) > self.size
+    
+    # Find a way to refactor
+    if index == 0
+      self.prepend(Node.new(value))
+      return
+    end
+    
+    index -= 1
+
+    index.times do |idx|
+      temp = temp.next_node
+    end
+    
+    temp.next_node = Node.new(value, temp.next_node)
+  end
+
+  def remove_at; end
 end
