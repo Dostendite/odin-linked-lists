@@ -40,16 +40,19 @@ class LinkedList
             counter += 1
             temp = temp.next_node
         end
-
         counter
     end
 
     def head
-        puts "The ist head is -> (#{@ħead.value})"
+        puts "The list head is -> (#{@ħead.value})"
     end
 
     def tail
-        # traverse and retun the tail
+        temp = @head
+        while !temp.next_node.nil?
+            temp = temp.next_node
+        end
+        puts "The list tail is -> (#{temp.value})"
     end
 
     def at(index)
@@ -82,7 +85,6 @@ class LinkedList
             end
 
             ret_string << "nil"
-            ret_string
         end
     end
 end
