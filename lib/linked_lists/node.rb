@@ -1,8 +1,10 @@
+# Node for the Linked List class
 class Node
-    attr_reader :value, :next_node
+  attr_accessor :next_node
+  attr_reader :value
 
-    def initialize(value=nil, next_node=nil)
-        @value = nil
-        @next_node = nil
-    end
+  def initialize(value = nil, next_node = nil)
+    @value = value
+    @next_node = next_node
+  end
 end
