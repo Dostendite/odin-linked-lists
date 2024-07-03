@@ -24,7 +24,6 @@ class LinkedList
 
     def prepend(value)
         temp = @head
-
         @head = value
 
         value.next_node = temp
@@ -93,7 +92,17 @@ class LinkedList
     end
 
     def find(value)
-        # return index if value is in linked list
+        temp = @head
+        counter = 0
+        
+        while !temp.next_node.nil?
+            return counter if temp.value == value
+            temp = temp.next_node
+            counter += 1
+        end
+
+        return counter if temp.value == value
+        nil
     end
 
     def to_s
