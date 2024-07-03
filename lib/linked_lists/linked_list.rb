@@ -44,7 +44,7 @@ class LinkedList
     end
 
     def head
-        puts "The list head is -> (#{@ħead.value})"
+        @head
     end
 
     def tail
@@ -52,12 +52,14 @@ class LinkedList
         while !temp.next_node.nil?
             temp = temp.next_node
         end
-        puts "The list tail is -> (#{temp.value})"
+        temp
     end
 
-    def at(index)
-        # return node at index
-    end
+    # def at(index)
+    #     temp = @head
+
+        
+    # end
 
     def pop
         # remove the last element from the list
