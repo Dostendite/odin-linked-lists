@@ -13,8 +13,5 @@ This is my very first implementation of the linked list!
 - **#contains?**(value) -> Returns true if any node matches value.
 - **#find**(value) -> Returns idx of node that matches value.
 - **to_s** -> Prints the list as (node) -> (node) -> nil
-
-### Pending
-
 - **#insert_at**(value, idx)
 - **#remove_at**(idx)
