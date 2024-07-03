@@ -22,7 +22,11 @@ class LinkedList
     end
 
     def prepend(value)
-        # prepend and reassign head
+        temp = @head
+
+        @head = value
+
+        value.next_node = temp
     end
 
     def size
@@ -66,17 +70,19 @@ class LinkedList
 
     def to_s
         if @head.nil?
-            puts "Linked list is empty."
+            return "Linked list is empty."
         else
             temp = @head
 
-            print "(#{temp.value}) -> "
-
+            ret_string = "(#{temp.value}) -> "
+            
             while !temp.next_node.nil?
-                print "(#{temp.value}) -> "
+                temp = temp.next_node
+                ret_string << "(#{temp.value}) -> "
             end
 
-            print "nil"
+            ret_string << "nil"
+            ret_string
         end
     end
 end
