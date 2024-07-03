@@ -141,7 +141,6 @@ class LinkedList
     prev = nil
 
     return false if @head.nil?
-    return false if (index - 1) > self.size
 
     if index == 0
       @head = @head.next_node
