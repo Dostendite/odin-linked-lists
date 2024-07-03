@@ -1,5 +1,5 @@
-require_relative "linked_lists/linked_list"
-require_relative "linked_lists/node"
+require_relative "lib/linked_list"
+require_relative "lib/node"
 
 linked_list = LinkedList.new
 

@@ -1,5 +1,3 @@
-require "pry-byebug"
-
 # Linked List - Dynamic linear data structure
 class LinkedList
   def initialize
