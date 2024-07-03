@@ -18,7 +18,6 @@ class LinkedList
             while !temp.next_node.nil?
                 temp = temp.next_node
             end
-
         temp.next_node = value
         end
     end
@@ -77,13 +76,20 @@ class LinkedList
             prev = temp
             temp = temp.next_node
         end
-
         prev.next_node = nil
         temp.value
     end
 
     def contains?(value)
-        # return true if value is in linked list
+        # Weird bug which creates a seemingly infinite loop happens
+        # whenever two identical nodes are appended.
+        temp = @head
+        
+        while !temp.next_node.nil?
+            return true if temp.value == value || temp.next_node.value == value
+            temp = temp.next_node
+        end
+        false
     end
 
     def find(value)
@@ -102,7 +108,6 @@ class LinkedList
                 temp = temp.next_node
                 ret_string << "(#{temp.value}) -> "
             end
-
             ret_string << "nil"
         end
     end
