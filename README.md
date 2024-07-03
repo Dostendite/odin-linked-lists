@@ -16,5 +16,5 @@ This is my very first implementation of the linked list!
 
 ### Pending
 
-- **#insert_at(value, idx)**
-- **#remove_at(idx)**
+- **#insert_at**(value, idx)
+- **#remove_at**(idx)
