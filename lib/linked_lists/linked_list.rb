@@ -1,3 +1,5 @@
+require 'pry-byebug'
+
 class LinkedList
     def initialize
         @head = nil
@@ -55,14 +57,29 @@ class LinkedList
         temp
     end
 
-    # def at(index)
-    #     temp = @head
+    def at(index)
+        temp = @head
 
-        
-    # end
+        return self.tail.value if index > self.size
+
+        until index == 0
+            temp = temp.next_node
+            index -= 1
+        end
+        temp.value
+    end
 
     def pop
-        # remove the last element from the list
+        temp = @head
+        prev = nil
+
+        while !temp.next_node.nil?
+            prev = temp
+            temp = temp.next_node
+        end
+
+        prev.next_node = nil
+        temp.value
     end
 
     def contains?(value)
