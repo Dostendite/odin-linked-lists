@@ -115,12 +115,12 @@ class LinkedList
     ret_string << "nil"
   end
 
+  # Find a way to refactor
   def insert_at(value, index)
     temp = @head
     
-    return false if (index) > self.size
+    return false if index > self.size
     
-    # Find a way to refactor
     if index == 0
       self.prepend(Node.new(value))
       return
@@ -128,12 +128,32 @@ class LinkedList
     
     index -= 1
 
-    index.times do |idx|
+    index.times do
       temp = temp.next_node
     end
     
     temp.next_node = Node.new(value, temp.next_node)
   end
 
-  def remove_at; end
+  # Refactor pending
+  def remove_at(index)
+    temp = @head
+    prev = nil
+
+    return false if @head.nil?
+    return false if (index - 1) > self.size
+
+    if index == 0
+      @head = @head.next_node
+      return
+    end
+
+    index.times do |idx|
+      idx -= 1
+      prev = temp
+      temp = temp.next_node
+    end
+
+    prev.next_node = temp.next_node
+  end
 end
